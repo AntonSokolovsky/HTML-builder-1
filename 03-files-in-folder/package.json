@@ -1,0 +1,12 @@
+{
+  "name": "03-files-in-folder",
+  "version": "1.0.0",
+  "description": "В файле **index.js** директории **03-files-in-folder** напишите скрипт выводящий в консоль данные о файлах содержащихся в папке **secret-folder**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
