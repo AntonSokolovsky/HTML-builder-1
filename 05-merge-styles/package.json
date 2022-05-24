@@ -1,0 +1,12 @@
+{
+  "name": "05-merge-styles",
+  "version": "1.0.0",
+  "description": "В файле **index.js** директории **05-merge-styles** напишите скрипт собирающий в единый файл содержимое папки **styles**. Выходной файл должен носить имя **bundle.css** и находиться внутри папки **project-dist**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
