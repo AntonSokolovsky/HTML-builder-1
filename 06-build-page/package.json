@@ -1,0 +1,12 @@
+{
+  "name": "06-build-page",
+  "version": "1.0.0",
+  "description": "В файле **index.js** директории **06-build-page** напишите скрипт который:\r 1. Создаёт папку  **project-dist**.\r 2. Заменяет шаблонные теги в файле **template.html** с названиями файлов из папки components (пример:```{{section}}```) на содержимое одноимённых компонентов и  сохраняет результат в **project-dist/index.html**.\r 3. Собирает в единый файл стили из папки **styles** и помещает их в файл **project-dist/style.css**.\r 4. Копирует папку **assets** в **project-dist/assets**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
