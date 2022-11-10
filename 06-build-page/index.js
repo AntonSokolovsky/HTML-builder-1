@@ -22,12 +22,14 @@ fs.mkdir(pathFolderDest, { recursive: true }, (err) => {
     const templateSamples = template.match(/{{.+}}/gi).map((sample) => sample.slice(2, sample.length - 2));
     const obj = {};
     for (let i = 0; i < templateSamples.length; i++) {
-      obj[templateSamples[i]] = await readFile(`${pathComponents}\\${templateSamples[i]}.html`);
+    //   obj[templateSamples[i]] = await readFile(`${pathComponents}\\${templateSamples[i]}.html`);
+      obj[templateSamples[i]] = await readFile(`${path.join(pathComponents, templateSamples[i])}.html`)
       obj[templateSamples[i]] = obj[templateSamples[i]].toString();
       let page = template.split(`{{${templateSamples[i]}}}`);
       template = page[0] + obj[templateSamples[i]] + page[1];
     }
-    writeFile(pathFolderDest + '\\'+'index.html', template);
+    // writeFile(pathFolderDest + '\\'+'index.html', template);
+    writeFile(path.join(pathFolderDest, 'index.html'), template);
   })();
 
 const pathFileDest = path.join(__dirname, 'project-dist', 'style.css');
@@ -75,7 +77,8 @@ fs.readdir(pathFolderAssetsSrc,
                 if (err) throw err;
                 });
             } else if (el.isDirectory()) {
-                fs.mkdir(pathFolderAssetsDest + '\\' + el.name, {recursive:true} , err => {
+                // fs.mkdir(pathFolderAssetsDest + '\\' + el.name, {recursive:true} , err => {
+                    fs.mkdir(path.join(pathFolderAssetsDest, el.name), {recursive:true} , err => {
                   if (err) throw err;
                 });
                 copyFile(path.join(pathFolderAssetsSrc, el.name), path.join(pathFolderAssetsDest, el.name));
